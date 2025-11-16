@@ -1,0 +1,218 @@
+/* ------------------------------
+   Global Netflix Theme
+-------------------------------*/
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.header {
+  text-align: center;
+  padding: 45px 0 22px;
+  background: radial-gradient(circle at top, #2b0000, #050000);
+}
+
+.logo {
+  width: 60px;
+  filter: drop-shadow(0 0 12px #ff3b3b);
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 800;
+  color: #ff0f1b;
+}
+
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 30px;
+  color: white;
+}
+
+/* Cinematic ambient glow */
+.container::before {
+  content: "";
+  position: fixed;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(circle at center,
+    rgba(255, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.9)
+  );
+  z-index: -1;
+  filter: blur(120px);
+}
+
+/* ------------------------------
+   Header
+-------------------------------*/
+.header h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #e50914;  /* Netflix red */
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.small {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* ------------------------------
+   Textarea
+-------------------------------*/
+textarea {
+  width: 100%;
+  height: 140px;
+  background: #141414;
+  border: 1px solid #333;
+  padding: 12px;
+  color: white;
+  resize: none;
+  border-radius: 6px;
+  outline: none;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+textarea:focus {
+  border-color: #e50914;
+  box-shadow: 0 0 10px rgba(229, 9, 20, 0.6);
+}
+
+/* ------------------------------
+   Buttons
+-------------------------------*/
+.btn-primary,
+.btn-secondary {
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.btn-primary {
+  background: #e50914;
+  border: none;
+  color: white;
+  transition: 0.2s;
+}
+
+.btn-primary:hover {
+  background: #f40612;
+}
+
+.btn-secondary {
+  background: #333;
+  color: white;
+  border: 1px solid #444;
+}
+
+.btn-secondary:hover {
+  background: #444;
+}
+
+/* ------------------------------
+   Result Blocks
+-------------------------------*/
+.quiz-box {
+  white-space: pre-wrap;
+  line-height: 1.7;
+  font-size: 16px;
+  color: #e6e6e6;
+  background: #111;
+  padding: 18px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(255, 0, 0, 0.15);
+  margin-top: 10px;
+}
+
+.quiz-box strong {
+  color: #e50914;
+  font-weight: 700;
+}
+
+.quiz-box .question {
+  margin-bottom: 10px;
+}
+
+
+/* ------------------------------
+   Netflix Card Row (Saved Entries)
+-------------------------------*/
+.saved-item {
+  min-width: 250px;
+  background: #181818;
+  border-radius: 10px;
+  padding: 15px;
+  margin-right: 15px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  border: 1px solid #222;
+}
+
+.saved-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.6);
+}
+
+h3 {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+/* Make saved entries scroll horizontally like Netflix */
+.container > h3 + div,
+h3 + .small + div {
+  display: flex;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.container > h3 + div::-webkit-scrollbar {
+  height: 8px;
+}
+
+.container > h3 + div::-webkit-scrollbar-thumb {
+  background: #e50914;
+  border-radius: 10px;
+}
+
+/* ------------------------------
+   🎬 Loading Shimmer Effect
+-------------------------------*/
+.btn-primary[disabled] {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary[disabled]::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0.1),
+    rgba(255,255,255,0.4),
+    rgba(255,255,255,0.1)
+  );
+  animation: shimmer 1.3s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
