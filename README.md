@@ -90,5 +90,6 @@ Pull requests are welcome.
 Open an issue for bugs or feature requests.
 
 
+<img width="946" height="826" alt="Screenshot 2025-11-17 130921" src="https://github.com/user-attachments/assets/20589205-1bda-4602-829a-c9970f13473e" />
 
 
